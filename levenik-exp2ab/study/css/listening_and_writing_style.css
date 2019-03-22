@@ -1,0 +1,152 @@
+/* Applies to the writing task of the experiment */
+/* Author: Nikolay Panayotov */
+
+#enterButton {
+	border: none;
+	background-color: #fff;
+	box-shadow: none;
+	margin: 0;
+	padding: 0;
+}
+
+#enterButton:focus {
+	outline: none;
+}
+
+#keyboard img {
+	padding: 0.3%;
+	border: 1px black solid;
+	border-radius: 4px;
+	margin: 0.2%;
+	box-shadow: 2px 2px 1px gray;
+	
+	width: 10%;
+}
+
+#keyboard img:active {
+	box-shadow: 1px 1px black;
+}
+
+#typingField { 
+	border: 1px solid black;
+	text-align: center;
+}
+
+#typingField img{ 
+	margin: 2px;
+}
+
+#solution {
+	color: #32CD32;
+}
+
+#solutionField { 
+	border: 1px solid #32cd32;
+	text-align: center;
+}
+
+#solutionField img{ 
+	margin: 2px;
+}
+
+#keyboard > div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#leftKeyboard {
+	width: 70%;
+}
+
+#rightKeyboard {
+	width: 8%;
+	text-align: left;
+}
+
+#rightKeyboard div:first-child {
+	margin-bottom: 55%;
+}
+
+#rightKeyboard img {
+	/*width: 70%;*/
+	width: 100%;
+}
+
+/* don't move up or down*/
+/*
+#writingMain {
+	min-width: 280px;
+	width: 90%;
+	position: relative;
+	transform: none;
+	margin: 0 auto;
+	top: 0;
+	left: 0;
+}*/
+
+#display {
+	padding-top: 1px;
+}
+
+#picture {
+	width: 15%;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Small Screens*/
+@media all and (max-width: 800px) {
+	#typingField { 
+		min-height: 36px;
+	}
+
+	#typingField img{
+		width: 32px;
+	}
+	
+	#solutionField { 
+		min-height: 36px;
+	}
+
+	#solutionField img{
+		width: 32px;
+	}
+}
+
+/* Medium Screens*/
+@media all and (min-width: 800px) {
+	#typingField { 
+		min-height: 68px;
+	}
+
+	#typingField img{
+		width: 64px;
+	}
+	
+	#solutionField { 
+		min-height: 68px;
+	}
+
+	#solutionField img{
+		width: 64px;
+	}
+}
+
+/* Big Screens*/
+@media all and (min-width: 1800px) {
+	#typingField { 
+		min-height: 132px;
+	}
+
+	#typingField img{
+		width: 128px;
+	}
+	
+	#solutionField { 
+		min-height: 132px;
+	}
+
+	#solutionField img{
+		width: 128px;
+	}
+}

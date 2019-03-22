@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- 
+	Start of Experiment
+	Author: Nikolay Panayotov
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Language Learning Study</title>
+	<!-- Styling -->
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+</head>
+<body>
+	<main id="briefingMain">
+		<section id="briefing">
+			<h1>Writing Practice Block</h1>
+			<p>You will next practice how to write in our made-up language.</p>
+			<p>You will hear the made-up words one at a time, and you have to type them out using the virtual keyboard on the screen (note that the location of the keys might change over time). Again, don’t worry if you don’t get it right straight away; after each answer we will show you the correct spelling for each word in the made-up language.	
+			</p>
+			<p>Bear in mind that there are in total 3 practice blocks in this study.</p>	
+			<p>You may take a short 1-2 minute break if you like. Please don’t stay away for longer or you will forget what you have just learned.</p>
+			<button id="continueButton" onclick="nextButtonPressed();">Next</button>
+		</section>
+		<section id="progressBars">
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	<!-- Add JQuery Support -->
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<script src="javascript/progress_bars.js"></script>
+	<script src="javascript/information_screen.js"></script>
+</body>
+</html>

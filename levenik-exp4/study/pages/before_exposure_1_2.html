@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+	Info screen before word exposure phase
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Language Learning Study</title>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+	<style>
+		#briefingMain #briefing p {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<main id="briefingMain">
+		<section id="briefing">
+			<h1>Word Learning</h1>
+			<p>On the next few screens you will hear all of the words in our language and be asked to repeat them aloud into your microphone. You will hear each word again after recording.</p>
+			<p>Please check that your microphone is plugged in and switched on, and that you are wearing headphones or have speakers turned on throughout. </p>
+			<button id="continueButton" onclick="nextButtonPressed();">Next</button>
+		</section>
+		<section id="progressBars">
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<script src="javascript/progress_bars.js"></script>
+	<script src="javascript/information_screen.js"></script>
+</body>
+</html>

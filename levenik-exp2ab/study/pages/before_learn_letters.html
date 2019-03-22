@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- 
+	Author: Nikolay Panayotov
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Language Learning Study</title>
+	<!-- Styling -->
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+</head>
+<body>
+	<main id="briefingMain">
+		<section id="briefing">
+			<h1>You will now learn the letters of our language.</h1>
+			<p>Please check that your microphone is plugged in and switched on, and that you are wearing headphones or have speakers turned on throughout. </p>
+			<p>Look at the cross on the screen and press NEXT to replace the cross with a letter and hear its sound. You will see each letter one at a time.
+			</p><p>If you experience any technical difficulties during the study try refreshing or reloading the page through your browser.</p>
+			<button id="continueButton" onclick="nextButtonPressed();">Next</button>
+		</section>
+		<section id="progressBars">
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	<!-- Add JQuery Support -->
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<script src="javascript/progress_bars.js"></script>
+	<script src="javascript/information_screen.js"></script>
+</body>
+</html>

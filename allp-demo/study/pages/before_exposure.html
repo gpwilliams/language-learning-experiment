@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- 
+	Author: Nikolay Panayotov
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Language Learning Study</title>
+	<!-- Styling -->
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+	<style>
+		#briefingMain #briefing p {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<main id="briefingMain">
+		<section id="briefing">
+			<h1>Word Exposure Block</h1>
+			<p>On the next screen you will hear all of the words in our language.</p>
+			<button id="continueButton" onclick="nextButtonPressed();">Next</button>
+		</section>
+		<section id="progressBars">
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	<!-- Add JQuery Support -->
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<script src="javascript/progress_bars.js"></script>
+	<script src="javascript/information_screen.js"></script>
+</body>
+</html>

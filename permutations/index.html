@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!---
+1. Check for textarea limits and styling 
+-->
+<html lang="en-GB">
+	<head>
+		<title>HTML Head</title>
+		<style type="text/css">
+			textarea {
+				display: block;
+				margin: 1em 0em 0em 0em;
+			}
+			#generateButton {
+				display: block;
+				margin: 1em 0em 0em 0em;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Magic Word Permutations</h1>
+		<p>Please input a word construction adhering to English phonotactics:
+			<ul>
+			<li>Words must contain at least 1 vowel</li>
+			<li>Words can have a maximum of 3 consonants in an onset, and 4 in a coda. 
+			<br>Note: Our site does not control for English phonotactics for words with greater than 2 consonant clusters.</li>
+			</ul>
+		</p>	
+		<p><em>Important: Because of combinatorical explosion this is very slow for long constructions, such as CCVCCVCC</em></p>
+		<label for="constructionInput">Construction:
+			<input type="text" id="constructionInput" name="construction_name" disabled />
+		</label>	
+		<button onclick="typeConstruction('C');">C</button>
+		<button onclick="typeConstruction('V');">V</button>
+		<button onclick="clearConstruction();">Clear</button>
+		<label><input type="checkbox" id="randomiseCheckBox">Randomise?</label>
+		<button id="generateButton" onclick="generate();">Generate To Console (F12)</button>
+
+		<textarea id="wordsHTML" rows="10" cols="70"></textarea>
+		<p>Note: Words cannot include sequences of repeated consonants and are thus omitted from the output.</p>
+	
+		<script src="Levenik_permutations_final.js" type="text/javascript"></script>
+	</body>
+</html>

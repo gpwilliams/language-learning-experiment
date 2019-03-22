@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- 
+	Start of Experiment
+	Author: Nikolay Panayotov
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Language Learning Study</title>
+	<!-- Styling -->
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+</head>
+<body>
+	<main id="briefingMain">
+		<section id="briefing">
+			<h1>Congratulations! You’re nearly there!</h1>
+			<p>Next, we want to see how well you can read in the made-up language. To do this, you will complete similar reading tasks as you did before, but this time we will not provide you with the correct answers. 
+			</p><p>After these tasks we will show you some of your results so you can find out how well you learned the language. 
+			</p><p>You will see a lot of familiar words that you already know, but there will also be some new words – don’t worry, these words will be made up of letters and sounds that you have seen and heard before.
+			</p><p>As before, you will see a written word and you have to read it aloud. 
+			</p>				
+			<button id="continueButton" onclick="nextButtonPressed();">Next</button>
+		</section>
+		<section id="progressBars">
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	<!-- Add JQuery Support -->
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<script src="javascript/progress_bars.js"></script>
+	<script src="javascript/information_screen.js"></script>
+</body>
+</html>

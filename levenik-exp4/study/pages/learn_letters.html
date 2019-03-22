@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<!--
+	Screen for learning letters
+-->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Language Learning Study</title>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+	<style>
+		#keyboard img {
+			padding: 0.3%;
+			margin: 0.2%;
+			background-color: white;
+			width: 90%;
+		}
+
+		#keyboard > div {
+			vertical-align: middle;
+		}
+
+		#keyboard audio {
+			display: none;
+			margin: 0.5em;
+		}
+		
+		#keyboard div div {
+			display: none;	
+					
+			width: 20%;
+			padding: 0.3%;
+			margin: 0.2%;
+			text-align: center;
+			
+			background-color: white;
+			border: 1px black solid;
+			border-radius: 4px;
+			box-shadow: 2px 2px 1px gray;	
+		}
+		
+		#keyboard div div:active {
+			box-shadow: 1px 1px black;
+		}
+		
+		@media all and (min-width: 1425px) {
+			#keyboard audio {
+				display: block;
+				width: 90%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<section id="display">
+			<h1>Alphabet Learning</h1>
+		</section>
+		<section id="keyboard">
+			<img id="locationPicture" src="" class="trial">
+			<div>
+				<div id='letterCard'>
+					<img id="letterImage">
+					<audio id="letterAudio"></audio>
+				</div>
+			</div>
+			<button id="nextButton">next</button>
+		</section>
+		<!-- Progress Bars -->
+		<section id="progressBars">
+			<label for="taskProgress">
+				<span>Task Progress:</span>
+				<progress id="taskProgress"><span></span></progress>
+			</label>
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<script src="javascript/progress_bars.js"></script>
+	<script src="javascript/learn_letters.js"></script>
+	<script src="javascript/location_picture.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+	Info screen before reading practice
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Language Learning Study</title>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+</head>
+<body>
+	<main id="briefingMain">
+		<section id="briefing">
+			<h1>Reading Practice Block</h1>
+			<p>Next, you will see the words spelled out using the made-up letters. Read them out loud from left to right as best as you can. 
+			</p><p>This may seem difficult at first and you may feel like you can’t remember any of the letter sounds. But rest assured, we know based on the experience of others that you will get better pretty quickly.
+			</p>
+			<p>You may take a short break if you like. Please don’t stay away for too long or you will forget what you have just learned.</p>
+			<img id="locationPicture" src="">
+			<button id="continueButton" onclick="nextButtonPressed();">Next</button>
+		</section>
+		<section id="progressBars">
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<script src="javascript/progress_bars.js"></script>
+	<script src="javascript/information_screen.js"></script>
+	<script src="javascript/location_picture.js"></script>
+</body>
+</html>

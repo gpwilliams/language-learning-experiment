@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+	Welcome page of Experiment
+	PLEASE READ PROVIDED DOCUMENTATION BEFORE EDITING
+	NIKOLAY PANAYOTOV, 2018	
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Language Learning Study</title>
+	<link href="study/css/normalize.css" rel="stylesheet">
+	<link href="study/css/global_style.css" rel="stylesheet">
+	<style>
+		#briefingMain {
+			min-width: 280px;
+			width: 90%;
+			position: relative;
+			transform: none;
+			margin: 0 auto;
+			top: 0;
+			left: 0;
+		}
+
+		#briefingMain p {
+			padding-left: 5%;
+			padding-right: 5%;
+			text-align: justify;
+			margin: 2em;
+		}
+
+		#briefingMain ul {
+			padding-left: 10%;
+			text-align: justify;
+			margin: 2em;
+		}
+
+		#briefingMain ul li {
+			padding-bottom: 1em;
+		}
+
+		em {
+			font-weight: bold;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<main id="briefingMain">
+		<section id="briefing">
+			<h1>Welcome to our 'Made-up Language Learning'-study!</h1>
+			<p>We are trying to understand what factors make it easier or more difficult to learn to read and write. Because adults already know how to read and write in one or several languages, we made up a language of our own to study how people do it.
+			</p>
+			<p>You will be asked to learn to read and spell some words from a novel made-up language.</p>
+			<ul><li>In the first part you will learn to say the words, going through the entire set of 30 words three times to make sure you know them well.
+			</li><li>At the end of this part there will be a check to see how well you have learned them. 
+			</li><li>In the second part, you will learn the letters and how to read and spell the words.
+			</li><li>At the end we will check how well you can read and spell in this new made-up language.
+			</li>
+			</ul>
+			<p>On average, we estimate this task to take around ?????????? to complete. Feel free to take breaks between sections.</p>
+			<p>Please make sure that you are in a quiet environment prior to taking part in this study, as we need good quality voice recordings.</p>
+			</p><p>For this, we would ask you to have a microphone and speakers/headphones ready and plugged in. Please check they are working before taking part. This study is not compatible with iPhones and iPads, as well as the Safari browser and Internet Explorer, because of restrictions on audio recording. Please use the latest version of Google Chrome for best results.
+			</p>
+			<p>If you experience any technical difficulties during the study try refreshing or reloading the page through your browser.</p>
+			<p><b>You are not allowed to write things down on paper as that is considered cheating! You shouldn't try it as it is very easy for us to tell when someone cheats.</b></p>
+			<br>
+			<div id="noMicMessage"><p><em>You either do not have a microphone plugged in or you have not granted us permission to use it. You cannot continue unless we can record you - please make sure you allow microphone use in your browser and refresh or reload the page.</em></p></div>
+			<div id="noBrowserMessage" hidden><p><em>Your browser does not support audio recording and so you cannot participate through this browser.</em></p></div>
+			<div id="noAudioMessage" hidden><p><em>Your browser does not support audio elements and so you cannot participate through this browser.</em></p></div>
+			<!--- <button id="continueButton" onclick="window.location = 'study/';" disabled>Next</button>-->
+			<button id="continueButton" onclick="nextButtonPressed();">Next</button>
+		</section>
+	</main>
+	<script src="study/javascript/modernizr-custom.js"></script>
+	<script>
+		// The code in this block checks for compatability with audio and microphone before allowing the user to continue
+		
+		if (!Modernizr.getusermedia) {
+			document.getElementById("noBrowserMessage").hidden = false;
+			document.getElementById("continueButton").disabled = true;
+		}
+
+		if (!Modernizr.audio) {
+			document.getElementById("noAudioMessage").hidden = false;
+			document.getElementById("continueButton").disabled = true;
+		}
+		
+		function nextButtonPressed() {
+			window.location = 'ethics.html' + window.location.search;
+		}
+
+		window.AudioContext = window.AudioContext || window.webkitAudioContext;
+		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.msGetUserMedia || navigator.mozGetUserMedia;
+
+		window.onload = function() {
+			document.getElementById("noMicMessage").hidden = false;
+			document.getElementById("continueButton").disabled = true;
+
+			// check if browser supports web audio
+			try {
+				var audio_context = new window.AudioContext;
+			} catch (e) {
+				document.getElementById("noMicMessage").hidden = false;
+				document.getElementById("continueButton").disabled = true;
+			}
+
+			// attempt to get user media
+			navigator.getUserMedia({audio: true}, function() {
+					document.getElementById("noMicMessage").hidden = true;
+					document.getElementById("continueButton").disabled = false;
+				}, function(e) {
+				document.getElementById("noMicMessage").hidden = false;
+				document.getElementById("continueButton").disabled = true;
+			});
+
+		}
+	</script>
+</body>
+</html>

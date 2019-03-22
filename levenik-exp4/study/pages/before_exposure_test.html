@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+	Info screen before word exposure phase
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Language Learning Study</title>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+	<style>
+		#briefingMain #briefing p {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<main id="briefingMain">
+		<section id="briefing">
+			<h1>Word Test</h1>
+			<p>Excellent! You will now see the objects without hearing them. Please say each word for the object out loud into the microphone as before.</p>
+			<img id="locationPicture" src="">
+			<button id="continueButton" onclick="nextButtonPressed();">Next</button>
+		</section>
+		<section id="progressBars">
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<script src="javascript/progress_bars.js"></script>
+	<script src="javascript/information_screen.js"></script>
+	<script src="javascript/location_picture.js"></script>
+</body>
+</html>

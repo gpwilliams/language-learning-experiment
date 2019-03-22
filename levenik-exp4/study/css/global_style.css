@@ -1,0 +1,292 @@
+/* Global Style applies to all pages of the experiment */
+/* Author: Nikolay Panayotov */
+
+/*							*/
+/* 	Imports					*/
+/*							*/
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Armata');
+
+/*							*/
+/* 	Text and Section Style	*/
+/*							*/
+body {
+	text-align: center;
+	font-family: 'Exo 2', sans-serif;
+	font-size: 1em;
+	background-image: url("../resources/images/main_background.png");
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-position: 50px;
+}
+
+h2 {
+	font-size: 1.1em;
+}
+
+main {
+	min-width: 280px;
+	width: 90%;
+	/* Center Page Vertically and Horizontally*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+section {
+	margin: 0.5em auto 0.5em auto;
+	padding: 0.5em 2em 0.5em 2em;
+	box-shadow: 0px 1px 1px 2px rgba(0, 0, 0, 0.1);
+	
+	background: hsl(50, 20%, 99%);
+}
+
+section h1 {
+	font-size: 1.5em;
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+section p {
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+#briefingMain p {
+	padding-left: 5%;
+	padding-right: 5%;
+	margin: 2em;
+	text-align: justify;
+}
+
+#locationPicture {
+	display: block;	
+	width: 25%;
+	margin: 0 auto;
+}
+
+#locationPicture.trial {
+	display: block;	
+	width: 18%;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+/*							*/
+/* 	Forms Style				*/
+/*							*/
+#briefing form p {
+	text-align: center;
+	font-weight: bold;
+	margin: 1em;
+}
+
+label {
+	display: inline-block;
+}
+
+input {
+	margin: 1em;
+}
+
+input[type=number] {
+	border: 1px solid black;
+}
+
+input[type=text] {
+	border: 1px solid black;
+}
+
+form input[type=submit] {
+	display: block;
+	margin: 0 auto;
+	margin-top: 3em;
+}
+
+form {
+	margin: 1.5em;
+}
+
+/*							*/
+/* 	Button Style			*/
+/*							*/
+button, input[type=submit] {
+	font-family: 'Armata', sans-serif;
+	font-size: 1em;
+	background-color: #ff8888;
+	border: 2px solid black;
+	padding: 0.5em;
+	box-shadow: 1px 1px black;
+	margin: 1em;
+}
+
+button:hover, input[type=submit]:hover {
+	background-color: #ff5555;
+}
+
+button:disabled:hover, input[type=submit]:disabled:hover {
+	background-color: #ff9999;
+}
+
+button:active, input[type=submit]:active {
+	background-color: #ff1111;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5) inset;
+}
+
+/*							*/
+/* Progress Bar Style		*/
+/* Determinate				*/
+#progressBars {
+	text-align: left;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin-bottom: 0;
+}
+
+#progressBars progress {
+	display: inline-block;
+	margin: 0.1em;
+	width: 75%;
+}
+
+#progressBars label > span {
+	display: inline-block;
+	width: 18%;
+}
+
+#progressBars label {
+	font-size: 0.9em;
+	display: block;
+}
+
+/* TODO: progress text fallback*/
+progress span {
+	
+}
+
+progress
+{
+	/* turns off styling - not usually needed, but good to know. */
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+
+	/* gets rid of default border in firefox and opera. */ 
+	border: none;
+
+	/* needs to be in here for safari polyfill so background images work as expected. */
+	background-size: auto;
+
+	/* dimensions */
+	height: 0.5em;
+	
+	/* progress bar IE10 */
+	color: #1c1;
+}
+
+/* Progress Bar Chrome */
+progress::-webkit-progress-bar {
+	background-color: #eee;
+	border-radius: 16px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress::-webkit-progress-value {
+	background-color: #1c1;
+	box-shadow: 0 0 19px rgba(0, 0, 0, 0.25) inset;
+	border-radius: 16px; 
+}
+
+/* Progress Bar Firefox */
+progress::-moz-progress-bar { 
+	/* progress bar value firefox */
+	background: #1c1;
+	box-shadow: 0 0 19px rgba(0, 0, 0, 0.25) inset;
+	border-radius: 16px; 	
+}
+
+progress {
+	/* progress bar firefox */
+	background-color: #eee;
+	border-radius: 16px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+/*							*/
+/* 	Audio Style				*/
+/*							*/
+section audio {
+	width: 80%;
+	margin: 0 auto;
+}
+
+/* remove download button */
+audio::-internal-media-controls-download-button {
+	display:none;
+}
+
+audio::-webkit-media-controls-enclosure {
+	overflow:hidden;
+}
+
+audio::-webkit-media-controls-panel {
+	width: calc(100% + 30px); /* Adjust as needed */
+}
+
+
+/*							*/
+/* 	Media Queries			*/
+/*							*/
+
+/* TODO: Media Query does not handle absolutely all screens well*/
+/* Centering */
+@media all and (max-height: 640px) {
+	main {
+		top: 0;
+		transform: translateX(-50%);
+	}
+}
+
+@media all and (max-width: 320px) {
+	main {
+		left: 10px;
+		transform: translateY(-50%);
+	}
+}
+
+@media all and (max-height: 640px) and (max-width: 320px) {
+	main {
+		top: 0;
+		left: 10px;
+		transform: none;
+	}
+}
+
+@media all and (max-width: 480px) {
+	#briefingMain {
+		top: 0;
+		left: 10px;
+		transform: none;
+	}
+}
+
+/* More compact */
+@media all and (max-width: 950px) {
+	/* remove progress label*/
+	#progressBars progress {
+		width: 100%;
+	}
+
+	#progressBars label > span {
+		display: none;
+	}
+	
+	section {
+		padding: 0.5em 0.5em 0.5em 0.5em;
+	}
+	
+	#briefingMain p {
+		margin: 0.5em;
+	}
+}

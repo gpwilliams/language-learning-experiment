@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+	Opinion questionnaire screen
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Language Learning Study</title>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+	<style>
+		form label {
+			display: inline;
+		}
+	</style>
+</head>
+<body>
+	<main id="briefingMain">
+		<section id="briefing">
+			<h1>One last thing...</h1>
+			<p>Can you tell us how much you agree with the following statements?</p>
+			<form method="post" action="php/post_questionnaire.php">
+				<p>"I found the study fun."</p>
+				<label>Strongly Agree: <input type="radio" name="fun" value="5" required="required"></label>
+				<label>Agree: <input type="radio" name="fun" value="4" required="required"></label>
+				<label>Neither Agree nor Disagree: <input type="radio" name="fun" value="3" required="required"></label>				
+				<label>Disagree: <input type="radio" name="fun" value="2" required="required"></label>
+				<label>Strongly Disagree: <input type="radio" name="fun" value="1" required="required"></label>				
+				
+				<p>"I could hear the words in the study clearly."</p>
+				<label>Strongly Agree: <input type="radio" name="noise" value="5" required="required"></label>
+				<label>Agree: <input type="radio" name="noise" value="4" required="required"></label>
+				<label>Neither Agree nor Disagree: <input type="radio" name="noise" value="3" required="required"></label>				
+				<label>Disagree: <input type="radio" name="noise" value="2" required="required"></label>
+				<label>Strongly Disagree: <input type="radio" name="noise" value="1" required="required"></label>				
+				<br>
+				<input type="submit" value="Submit">
+			</form>
+		</section>
+		<section id="progressBars">
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<script src="javascript/progress_bars.js"></script>
+	<script src="javascript/information_screen.js"></script>
+</body>
+</html>

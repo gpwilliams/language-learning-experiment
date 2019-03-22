@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+	Reading and Speaking Task
+	Author: Nikolay Panayotov
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Language Learning Study</title>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+	<link href="css/reading_and_speaking_style.css" rel="stylesheet">
+	<style>
+		#picture {
+			width: 25%;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<!-- Instructions -->
+		<section id="info">
+			<h1>Word Learning</h1>
+			<p>Press NEXT to hear the words of the language.</p>
+		</section>
+		<section id="pictureDisplay">	
+			<img id="picture">	
+		</section>
+		<!-- Insert audio solution -->
+		<section id="solutionDisplay" hidden>
+			<audio id="wordAudio"></audio>
+		</section>
+		<!-- Display Text Prompt -->
+		<section id="promptDisplay" hidden>
+		</section>
+		<!-- User Controls -->
+		<section id="controls">
+			<div>
+				<button id="nextButton" disabled>next</button>
+			</div>
+		</section>	
+		
+		<!-- Progress Bars -->
+		<section id="progressBars">
+			<label for="taskProgress">
+				<span>Task Progress:</span>
+				<progress id="taskProgress"><span></span></progress>
+			</label>
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	
+	<!-- Add JQuery Support -->
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<!-- Main Script -->
+	<script src="javascript/progress_bars.js"></script>
+	<script src="javascript/learn_words.js"></script>
+</body>
+</html>

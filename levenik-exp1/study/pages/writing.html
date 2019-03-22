@@ -1,0 +1,83 @@
+<html>
+<!--
+	Writing task screen
+-->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Language Learning Study</title>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+	<link href="css/listening_and_writing_style.css" rel="stylesheet">
+</head>
+<body>
+	<!-- Sound Effects -->
+	<div id="sfxResources">
+		<audio id="sfxCorrect" src="resources/audio/game/correct.wav"></audio>
+		<audio id="sfxIncorrect" src="resources/audio/game/incorrect.wav"></audio>
+	</div>
+	
+	<main id="writingMain">
+		<!-- Instructions and Display Output-->
+		<section id="display">
+			<img id="picture">
+			<audio id="audioPrompt" controls></audio>
+			<p id="message">TYPE YOUR GUESS:</p>
+			<div id="typingField"></div>
+		</section>
+		<section id="solution" hidden>
+			<p>SEE CORRECT:</p>
+			<div id="solutionField"></div>
+		</section>
+		
+		<!-- User Controls -->
+		<section id="keyboard">
+			<div id="leftKeyboard">
+				<div>
+					<img class="letterKey" onclick="type(this);">
+					<img class="letterKey" onclick="type(this);">
+					<img class="letterKey" onclick="type(this);">
+					<img class="letterKey" onclick="type(this);">
+					<img class="letterKey" onclick="type(this);">					
+				</div>
+				<div>	
+					<img class="letterKey" onclick="type(this);">
+					<img class="letterKey" onclick="type(this);">
+					<img class="letterKey" onclick="type(this);">
+					<img class="letterKey" onclick="type(this);">
+					<img class="letterKey" onclick="type(this);">	
+				</div>
+				<div>
+					<img class="letterKey" onclick="type(this);">
+					<img class="letterKey" onclick="type(this);">
+					<img class="letterKey" onclick="type(this);">
+				</div>	
+			</div>
+			<div id="rightKeyboard">
+				<div>
+					<img id="back" src="resources/images/svg/backspace.svg" onclick="backspacePressed();"/>
+				</div>
+				<div>
+					<button id="enterButton" onclick="enterPressed();"><img id="enter" src="resources/images/svg/enter.svg" /></button>
+				</div>	
+			</div>
+			<button id="nextButton" onclick="nextPressed();" hidden>next</button>
+		</section>
+		
+		<!-- Progress Bars -->
+		<section id="progressBars">
+			<label for="taskProgress">
+				<span>Task Progress:</span>
+				<progress id="taskProgress"><span></span></progress>
+			</label>
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<script src="javascript/progress_bars.js"></script>
+	<script src="javascript/writing.js"></script>
+</body>
+</html>

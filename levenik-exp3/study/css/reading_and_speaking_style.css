@@ -1,0 +1,60 @@
+/* Applies to the reading task of the experiment */
+/* Author: Nikolay Panayotov */
+
+#missingMicrophoneWarning {
+	color: red;
+}
+
+#audioVisualisationCanvas {
+	display: inline-block;
+	width: 25px;
+	height: 100px;
+	margin: 0 auto;
+	margin-top: 0.5em;
+	border: 4px solid #ddd;
+}
+
+#timeVisualisationCanvas {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	margin: 0px auto;
+	border: 4px solid #ddd;
+}
+
+#promptDisplay img {
+	width: 8%;
+}
+
+#promptDisplay {
+	position: relative;
+}
+
+#promptDisplay:after {
+	padding-top: 8%;
+	display: inline-block;
+	content: '';
+}
+
+#solutionDisplay {
+	height: 60px;
+	padding-top: 5px;
+	padding-bottom: 0;
+}
+
+#controls {
+	padding-top: 2px;
+}
+
+#controls div button{
+	margin: 0.5em;
+}
+
+#pictureContainer {
+	padding: 1px;
+}
+
+#picture {
+	width: 15%;
+	margin: 0;
+}

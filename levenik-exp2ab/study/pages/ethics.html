@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- 
+	Start of Experiment
+	Author: Nikolay Panayotov
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Language Learning Study</title>
+	<!-- Styling -->
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+</head>
+<body>
+	<main id="briefingMain">
+		<section id="briefing">
+			<h1>Briefing</h1>
+			<p>This study is being conducted by Glenn Williams, Nikolay Panayatov and Vera Kempe and has received ethical approval by the Research Ethics Committee of Abertay University Dundee, Scotland. 
+			</p><p>It will involve one session and will typically last around 60 minutes. For the learning to work, we ask you to please complete the task in one sitting. We will give you the opportunity to take some short breaks between the different parts.
+			</p><p>Your participation in this study is voluntary. We will reimburse you in accordance with the advertised monetary value for this study on Amazon's Mechanical Turk only if you provide honest answers. Compensation will be awarded after completion of the study if your data has been provided within one testing session.
+			</p><p>There are no known risks for you in this study.
+			</p><p>You may decide to stop taking part at any time during the study without explanation and without penalty. To do so, simply close your browser at any point. If you do, your data will be destroyed, and will not be included in any analyses or publications. 
+			</p><p>Because your data is kept anonymous, we will not be able to remove them after completion. However, we will not analyze individual data but only the group data, which will be stored on password-protected servers to which only the researchers will have access.
+			</p><p>If you are interested in the outcome of the study, please email <a href="mailto:language.enquiries@abertay.ac.uk">language.enquiries@abertay.ac.uk</a>.
+			</p><p>Please click NEXT if you understand the information provided about the study and consent to participate.
+			</p>
+			<div id="noMicMessage" hidden><p><b>Your browser does not support audio recording and so you cannot participate.</b></p></div>
+			<div id="noAudioMessage" hidden><p><b>Your browser does not support audio elements and so you cannot participate.</b></p></div>
+			<button id="continueButton" onclick="nextButtonPressed();">Next</button>
+		</section>
+		<section id="progressBars">
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	<!-- Add JQuery Support -->
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<script src="javascript/progress_bars.js"></script>
+	<script src="javascript/information_screen.js"></script>
+	<script src="javascript/modernizr-custom.js"></script>
+	<script>
+		if (!Modernizr.getusermedia) {
+			document.getElementById("noMicMessage").hidden = false;
+			document.getElementById("continueButton").disabled = true;
+		}
+		
+		if (!Modernizr.audio) {
+			document.getElementById("noAudioMessage").hidden = false;
+			document.getElementById("continueButton").disabled = true;
+		}
+	</script>
+</body>
+</html>

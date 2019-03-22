@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+	End of Experiment
+	Author: Nikolay Panayotov
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Language Learning Study</title>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+	<style>
+		#briefingMain #info p {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<main id="briefingMain">
+		<section id="info">
+			<h1>Study Completed!</h1>
+			<p>Congratulations, you made good progress in learning to read and write in a completely new, made-up language. </p>
+			<span id="score"></span>
+			<p>Thank you for your time. Your responses will help us to understand how people learn to become literate in a new language.</p>
+		</section>
+		<section id="debrief">
+			<h1>Debriefing</h1>		
+			<p>The purpose of this study was to explore how we learn to read and write a language when we are exposed to different dialects. Depending on the condition you were in, you might have been given words with just one pronunciation or words with different pronunciations.
+			</p><p>While previous research has shown a link between exposure to dialects and poor literacy outcomes, our project aims to check whether this is still the case when we control for other factors such as educational and social background, which may give children advantages in exposure to language. We created the made-up language so everybody starts from the same point.
+			</p><p>We thank you again for taking part in our demonstration. If you have any further questions about this study, please feel free to contact Glenn Williams, at  <a href="mailto:language.enquiries@abertay.ac.uk">language.enquiries@abertay.ac.uk</a>.
+			</p>
+			<p>
+				<small>Copyright Disclaimer: Two sound effects in this study were used under the Creative Commons license: "correct" by "ertfelda" at <a href="https://www.freesound.org/people/ertfelda/sounds/243701/">link1</a>; and "Game Sound Wrong.wav" by "Bertrof" at <a href="https://www.freesound.org/people/Bertrof/sounds/131657/">link2</a>. This study is not for profit.			
+			</small></p>
+		</section>
+		<section id="progressBars">
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress" value="1" max="1"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	<!-- Add JQuery Support -->
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<!-- Main Script -->
+	<script src="javascript/progress_bars.js"></script>
+	<script>
+		// First Thing
+		window.onload = function () {
+			updateProgressBars(function() { }, function() { } );
+			$.get('php/get_results.php').done(function(data) {
+				document.getElementById("score").innerHTML = data;
+			});
+		};
+	</script>
+</body>
+</html>

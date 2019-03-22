@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- 
+	Author: Nikolay Panayotov
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Language Learning Study</title>
+	<!-- Styling -->
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+	<style>
+		label label span {
+			display: block;
+			margin-left: 1em;
+			margin-right: 1em;
+		}
+		
+		input[type=radio] {
+			margin-top: 0;
+		}
+		
+		#demographicsMain {
+			min-width: 280px;
+			width: 90%;
+			position: absolute;
+			top: 0%;
+			left: 50%;
+			transform: translate(-50%, 0%);
+		}	
+	</style>
+</head>
+<body>
+	<main id="demographicsMain">
+		<section>
+			<h1>Please fill in the following information</h1>
+			<form method="post" action="php/post_demographics.php">
+				<label>Age: <input type="number" name="age" required="required" min="1"></label>
+				<p>Gender:</p>
+				<label>Male: <input type="radio" name="gender" value="m" required="required"></label>
+				<label>Female: <input type="radio" name="gender" value="f" required="required"></label>
+				<label>Other: <input type="radio" name="gender" value="o" required="required"></label>				
+				<p>Please tell us how you would rate your proficiency in English from 1 to 5 - where 1 is elementary proficiency and 5 is native or bilingual proficiency.</p>
+					<label><span>1</span><input type="radio" name="englishrating" value="1" required="required"></label>
+					<label><span>2</span><input type="radio" name="englishrating" value="2" required="required"></label>
+					<label><span>3</span><input type="radio" name="englishrating" value="3" required="required"></label>
+					<label><span>4</span><input type="radio" name="englishrating" value="4" required="required"></label>
+					<label><span>5</span><input type="radio" name="englishrating" value="5" required="required"></label>			
+				<p>Please add any other languages you have studied and rate your fluency in them from 1 to 5 - where 1 is elementary proficiency and 5 is native or bilingual proficiency.</p>	
+				<div id="languageBlock">
+				</div>
+				<br>
+				<button type="button" onclick="addLanguage();">add language</button>
+				<input type="submit" value="Submit">
+			</form>
+		</section>
+		<section id="progressBars">
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	<!-- Add JQuery Support -->
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<script src="javascript/progress_bars.js"></script>
+	<script src="javascript/information_screen.js"></script>
+	
+	<script>
+		function addLanguage() {
+			if (document.getElementById("languageBlock").children.length < 10) {
+				var div = document.createElement("div");
+				
+				// language field
+				var langLabel = document.createElement("label");
+				langLabel.innerHTML = "Langauge: ";
+				var langInput = document.createElement("input");
+				langInput.type = "text";
+				langInput.name = "language[]";
+				langInput.required = "required";
+				
+				// appending language
+				langLabel.appendChild(langInput);
+				div.appendChild(langLabel);
+
+				
+				
+				// fluency fields
+				var fluencyLabel = document.createElement("label");
+				fluencyLabel.innerHTML = "Fluency: ";
+				
+				for (var i = 1; i <= 5; i++) {
+					var fluencyInputLabel = document.createElement("label");
+					fluencyInputLabel.innerHTML = "<span>" + String(i) + "</span>";
+					
+					var fluencyInput = document.createElement("input");
+					fluencyInput.type = "radio";
+					fluencyInput.name = "rating" + String(document.getElementById("languageBlock").children.length);
+					fluencyInput.value = i;
+					fluencyInput.required = "required";
+						
+					// fluency appending
+					fluencyLabel.appendChild(fluencyInputLabel);
+					fluencyInputLabel.appendChild(fluencyInput);
+					div.appendChild(fluencyLabel);
+				}
+				
+				// remove button
+				var removeButton = document.createElement("button");
+				removeButton.type = "button";
+				removeButton.addEventListener('click', removeLanguage, false);
+				removeButton.innerHTML = "remove language";
+
+				// all
+				div.appendChild(removeButton);
+				document.getElementById("languageBlock").appendChild(div);
+			} else {
+				alert("You cannot input more than 10 languages! Please only input the ten languages you have the most familiarity with.");
+			}
+		}
+		
+		function removeLanguage() {
+			this.parentNode.parentNode.removeChild(this.parentNode);
+		
+			var langs = document.getElementById("languageBlock").children;
+			for (var i = 0; i < langs.length; i++) {
+				var inputs = langs[i].getElementsByTagName("input");
+				for (var j = 0; j < inputs.length; j++) {
+					if (inputs[j].type == "radio") {
+						inputs[j].name = "rating" + String(i);
+					}
+				}
+			}
+		}
+	
+	
+	
+	</script>
+	
+</body>
+</html>

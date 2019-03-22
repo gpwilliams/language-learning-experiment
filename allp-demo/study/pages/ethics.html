@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- 
+	Start of Experiment
+	Author: Nikolay Panayotov
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Language Learning Study</title>
+	<!-- Styling -->
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+</head>
+<body>
+	<main id="briefingMain">
+		<section id="briefing">
+			<h1>Briefing</h1>
+			<p>This study is being conducted by Glenn Williams, Nikolay Panayatov and Vera Kempe and has received ethical approval by the Research Ethics Committee of Abertay University Dundee, Scotland. 
+			</p><p>This demonstration will typically last around 5 minutes. However, the full task usually takes around 60 minutes. We ask participants to complete the task in one sitting, with time for breaks between each section. If you decide that you do not want to take part in the demonstration at any time, simply close your browser. Please note, we will not collect any data at any point during this demonstration.
+			</p><p>If you are interested in the outcome of the study, please email <a href="mailto:language.enquiries@abertay.ac.uk">language.enquiries@abertay.ac.uk</a>.
+			</p><p>Please click NEXT understand the information provided and want to take part in the demonstration.
+			</p>
+			<div id="noMicMessage" hidden><p><b>Your browser does not support audio recording and so you cannot participate.</b></p></div>
+			<div id="noAudioMessage" hidden><p><b>Your browser does not support audio elements and so you cannot participate.</b></p></div>
+			<button id="continueButton" onclick="nextButtonPressed();">Next</button>
+		</section>
+		<section id="progressBars">
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	<!-- Add JQuery Support -->
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<script src="javascript/progress_bars.js"></script>
+	<script src="javascript/information_screen.js"></script>
+	<script src="javascript/modernizr-custom.js"></script>
+	<script>
+		if (!Modernizr.getusermedia) {
+			document.getElementById("noMicMessage").hidden = false;
+			document.getElementById("continueButton").disabled = true;
+		}
+		
+		if (!Modernizr.audio) {
+			document.getElementById("noAudioMessage").hidden = false;
+			document.getElementById("continueButton").disabled = true;
+		}
+	</script>
+</body>
+</html>

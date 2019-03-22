@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+	Reading and Speaking Task
+	Author: Nikolay Panayotov
+	
+	Audio recording is a basic implementation of the Recorderjs, saving recordings to the server.
+	Based on a combination of:
+	https://github.com/mattdiamond/Recorderjs/tree/master/examples 
+	and
+	http://stackoverflow.com/questions/19015555/pass-blob-through-ajax-to-generate-a-file 
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Language Learning Study</title>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+	<link href="css/reading_and_speaking_style.css" rel="stylesheet">
+</head>
+<body>
+	<main>
+		<!-- Instructions -->
+		<section id="missingMicrophoneWarning"  hidden="true">
+			<p>No microphone detected! Make sure your microphone is switched on and given access to the browser - then, refresh the page! This will not work on iPhones, iPads, Safari and Internet Explorer.</p>
+		</section>
+		<section id="pictureContainer">	
+			<img id="picture">	
+		</section>
+		<!-- Display Text Prompt -->
+		<section id="promptDisplay">	
+		</section>
+		<!-- Insert audio solution -->
+		<section id="solutionDisplay">
+		</section>
+		<!-- User Controls -->
+		<section id="controls">
+			<div>
+				<button id="recordButton">record</button>
+				<button id="nextButton" disabled="true">next</button>
+			</div>
+			<canvas id="timeVisualisationCanvas" width="100" height="100"></canvas>
+			<canvas id="audioVisualisationCanvas" width="200" height="40">
+				Recording in progress. Speak into the microphone...
+			</canvas>
+		</section>	
+
+		<!-- Progress Bars -->
+		<section id="progressBars">
+			<label for="taskProgress">
+				<span>Task Progress:</span>
+				<progress id="taskProgress"><span></span></progress>
+			</label>
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	
+	<!-- Add JQuery Support -->
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<!-- Main Script -->
+	<script src="javascript/progress_bars.js"></script>
+	<script src="javascript/reading.js"></script>
+	<!-- RecorderJS Library -->
+	<script src="javascript/recorderjs_dist/recorder.js"></script>
+</body>
+</html>

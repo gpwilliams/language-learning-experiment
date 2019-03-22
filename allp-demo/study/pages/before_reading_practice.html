@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- 
+	Start of Experiment
+	Author: Nikolay Panayotov
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Language Learning Study</title>
+	<!-- Styling -->
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/global_style.css" rel="stylesheet">
+</head>
+<body>
+	<main id="briefingMain">
+		<section id="briefing">
+			<h1>Reading Practice Block</h1>
+			<p>Normally, there are 3 practice blocks and in this study, however in the interest of brevity we only provide you with one practice block in this demonstration.
+			</p><p>Next, you will see the words spelled out using the made-up letters. Read them out loud from left to right as best as you can. Make sure your microphone and speakers/headphones are working and press RECORD once you are ready to speak - <b>you only get one chance at recording each word so make sure you know what to say before clicking RECORD</b>. Once you have recorded yourself, you will hear how the word should sound.
+			</p><p>This may seem difficult at first and you may feel like you can’t remember any of the letter sounds. But rest assured, we know based on the experience of others that you will get better pretty quickly.
+			</p>
+			<button id="continueButton" onclick="nextButtonPressed();">Next</button>
+		</section>
+		<section id="progressBars">
+			<label for="studyProgress">
+				<span>Study Progress:</span>
+				<progress id="studyProgress"><span></span></progress>
+			</label>
+		</section>
+	</main>
+	<!-- Add JQuery Support -->
+	<script src="javascript/jquery-3.1.1.js"></script>
+	<script src="javascript/progress_bars.js"></script>
+	<script src="javascript/information_screen.js"></script>
+</body>
+</html>
